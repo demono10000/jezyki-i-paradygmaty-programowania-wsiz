@@ -1,0 +1,16 @@
+lubi(marek,  koszykowka).
+lubi(adam, hokej).
+lubi(ania, planszowki).
+
+wiek(marek, 22).
+wiek(adam, 23).
+wiek(ania, 21).
+
+starszy(X, Y):-
+    wiek(X, Z), wiek(Y, Z2), Z>Z2.
+
+mlodszy(X, Y):-
+    wiek(X, Z), wiek(Y, Z2), Z<Z2.
+
+rowny(X, Y):-
+    wiek(X, Z), wiek(Y, Z2), Z=Z2.
