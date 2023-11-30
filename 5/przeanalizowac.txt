@@ -1,0 +1,76 @@
+Przeanalizowaæ nastêpuj¹ce przyk³ady:
+
+2
+
+” Lustereczko, powiedz przecie ”
+
+(+ 2 2)
+
+’ ( 2 2)
+
+( list 2 2)
+
+( let ( ( a 15)
+( b 16) )
+(+ a b )
+5
+(+ a a 4 b ) )
+( defparameter *glob1* 17)
+( setf *glob1* 18) ; komentarz
+
+( i f ( and (= v a r 2) ( p r i n t ”Dwa ! ” ) )
+( progn
+( i n c f v a r )
+(- v a r 2 ) )
+2)
+
+
+( cond ( warunek1 wynik1 )
+( warunek2 wynik2 )
+; . . .
+( warunekN wynikN ) )
+Konrad
+
+( l o op ( p r i n t ” Pa l e n i e procka ” ) )
+( l e t ( ( x 0 ) )
+( l o op ( p r i n t ” Pe t l a ”)
+( i f (>= x 10)
+( r e t u r n )
+( i n c f x ) ) ) )
+
+
+( do ( i n i c j a c j a zmi e n n y c h )
+( warunek konca zwr a c ana wa r t o s c )
+i n s t r u k c j e )
+
+( do ( ( a 0 b )
+( b 1 (+ a b ) ) )
+( ( minusp ( d e c f n ) a ) ) )
+( dot ime s ( i 10)
+( p r i n t i ) )
+( l o op f o r i f rom 1 to 1000 by 3 when ( oddp i ) c o l l e c t ( i i ) )
+
+( de fun nazwa ( [ parame t r y ] ) t r e s c )
+( de fun kwadrat ( x ) ( x x ) )
+( de fun doda j ( a b ) (+ a b ) )
+( de fun suma (& r e s t r e s t )
+( r educ e #’+ r e s t ) )
+#’suma --> #<FUNCTION SUMA>
+Konrad
+
+( de fun doubl e ( x ) ( x 2)
+( s e t f ( symbol-f u n c t i o n ’ doubl e ) #’( lambda ( x ) ( x 2 ) ) )
+(mapcar #’( lambda ( b l a ) (+ ( kwadrat b l a ) 4 ) ) ’ ( 1 2 3 4 5 ) )
+( de fun make-adde r ( x )
+( lambda ( a ) (+ a x ) ) )
+( d e f p a r ame t e r f (make-adde r 7 ) )
+( f u n c a l l f 10)
+
+( defmacro 3-way-i f ( ex A B C)
+‘ ( l e t ( ( p o t e n c j a l n y b l a d , ex ) )
+( cond ( ( n u l l p o t e n c j a l n y b l a d ,A)
+((= p o t e n c j a l n y b l a d 0) ,B)
+( t ,C) ) ) ) )
+
+
+

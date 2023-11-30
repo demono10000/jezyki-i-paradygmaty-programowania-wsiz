@@ -1,0 +1,8 @@
+1. (+ 2 (/ (* 3 4) 8))
+2. (+ (sin 12) (cos (mod 256 32)))
+3. (defun suma (x y) (+ x y))
+4. (defun parzysta (x) (if(= (mod x 2) 0) T Nil))
+5. (defun silnia (x) (if (> x 0) (* x (silnia(- x 1))) 1))
+6. (defun fib (n) (if (< n 2) 1 (+ (fib (- n 1)) (fib (- n 2)))))
+7. (defun sumaniep (x y) (if (< x (+ y 1)) (if (parzysta x) (sumaniep (+ x 1) y) (+ x (sumaniep (+ x 2) y) )) 0))
+8. (defun sumakwad (x y) (if (< x (+ y 1)) (+ (* x x) (sumakwad (+ x 1) y)) 0))
