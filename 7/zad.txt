@@ -1,0 +1,67 @@
+1.
+(defclass book ()
+((title :initarg :title :accessor book-title)
+(authors :initarg :authors :accessor book-authors)
+(publisher :initarg :publisher :accessor book-publisher)
+(date :initarg :date :accessor book-date)
+(isbn :initarg :isbn :accessor book-isbn)
+))
+
+(setq books '())
+
+(defun addbook (title authors publisher date isbn)
+(defparameter *book*
+(make-instance 'book
+:title title
+:authors authors
+:publisher publisher
+:date date
+:isbn isbn
+))
+(push *book* books)
+)
+
+(defun removebook (title)
+(dolist (book books)
+(if (string= title (book-title book))
+(setq books (remove book books)) ())
+))
+
+(defun searchbook (title)
+(dolist (book books)
+(if (string= title (book-title book))
+(format t "Tytul: ~a, Autor: ~a, Wydawnictwo: ~a, Rok: ~a, ISBN: ~a~%" (book-title book) (book-authors book) (book-publisher book) (book-date book) (book-isbn book)) ())
+))
+
+2.
+(defclass student ()
+((first-name :initarg :first-name :accessor student-first-name)
+(last-name :initarg :last-name :accessor student-last-name)
+(album :initarg :album :accessor student-album)
+(grades :initarg :grades :accessor student-grades :initform nil)))
+
+
+(defclass grade ()
+((subject-id :initarg :subject-id :accessor grade-subject-id)
+(semester :initarg :semester :accessor grade-semester)
+(grade :initarg :grade :accessor grade-grade)
+(date :initarg :date :accessor grade-date)))
+
+(setq students '())
+
+(defun addstudent (first-name last-name album)
+(let ((new-student (make-instance 'student :first-name first-name :last-name last-name :album album)))
+(push new-student students)
+new-student))
+
+(defun addgrade (student subject-id semester grade date)
+(let ((new-grade (make-instance 'grade :subject-id subject-id :semester semester :grade grade :date date)))
+(push new-grade (student-grades student))))
+
+(defun searchstudent (album)
+(dolist (student students)
+(when (string= album (student-album student))
+(format t "Imię: ~a, Nazwisko: ~a, Album: ~a~%" (student-first-name student) (student-last-name student) (student-album student))
+(dolist (grade (student-grades student))
+(format t "Przedmiot: ~a, Semestr: ~a, Ocena: ~a, Termin: ~a~%" (grade-subject-id grade) (grade-semester grade) (grade-grade grade) (grade-date grade)))
+(return))))
